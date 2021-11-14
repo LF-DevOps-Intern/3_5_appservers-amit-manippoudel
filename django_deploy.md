@@ -27,3 +27,9 @@
 
 
     gunicorn django_deploy_lf.wsgi --workers 3 --daemon --bind :8089
+
+> For access log and error log we can pass the flaf --access-logfile & --error-logfile to capture the log
+
+    gunicorn django_deploy_lf.wsgi  --bind 0.0.0.0:8089 -w 3 --capture-output --access-logfile access.log --error-logfile error.log -D
+
+
